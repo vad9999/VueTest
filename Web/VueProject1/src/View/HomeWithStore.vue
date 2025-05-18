@@ -4,7 +4,6 @@
         <my-input v-model="searchQuery" placeholder="Поиск" v-focus/>
         <div class="app__btns">
             <my-button @click="showDialog" class="btn">Создать пост</my-button>
-            <my-button @click="transition">Посты через хранилище</my-button>
             <!--<my-button @click="fetchPosts" class="btn">Получить посты</my-button>-->
             <my-select v-model="selectedSort" :options="sortOptions"/>
         </div>
@@ -58,9 +57,6 @@
             }
         },
         methods: {
-            transition() {
-                this.$router.push('/HomeWithStore')
-            },
             createPost(post) {
                 this.posts.push(post)
                 this.dialogVisible = false
